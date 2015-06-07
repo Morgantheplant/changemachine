@@ -40,7 +40,7 @@ function findChangeAmount(total){
          var singluar = dict[item[1]].slice(0, dict[item[1]].length-1)
            message += '1 '+ singluar +', '
        }
-       //exception can't simple remove 's' for penny
+       //exception: can't simply remove 's' for penny
        if(item[0]===1 && item[1]=== 1){
          message+='1 penny  '
        }
@@ -49,7 +49,7 @@ function findChangeAmount(total){
    //remove last space and comma and replace with period
    var removePer = message.slice(0,message.length-2) + "."
    
-   //gross... include an 'and'.. this can be replaced with a better RegExp
+   //gross... include an 'and' for last word.. this can be replaced with a better RegExp
    return removePer.split('').reverse().join("").replace(/,/,"dna ,").split('').reverse().join("")
    
    
